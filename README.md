@@ -39,20 +39,22 @@ A Java Spring Boot backend service that implements a WhatsApp chatbot for na
 
 ---
 
-## ⚙️ Getting Started
+## ☁️ Deployment
+You can deploy to Render, Heroku, or any Java‑friendly host.
 
-### 1. Clone the repo
+Push your code to GitHub.
 
-```bash
-git clone https://github.com/<your‑username>/whatsapp‑chatbot.git
-cd whatsapp-chatbot
+On Render:
 
+Create a new Web Service.
 
+Connect to your GitHub repo.
 
-# Firebase
-firebase.service-account=classpath:firebase-service-account.json
+Set Build Command: ./mvnw clean package
 
-# Twilio
-twilio.account-sid=YOUR_TWILIO_ACCOUNT_SID
-twilio.auth-token=YOUR_TWILIO_AUTH_TOKEN
-twilio.whatsapp-from=whatsapp:+14155238886
+Set Start Command: java -jar target/chatbot-0.0.1-SNAPSHOT.jar
+
+Add environment variables for Firebase path and Twilio credentials.
+
+Render will build and deploy your bot, giving you a public URL.
+
